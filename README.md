@@ -12,14 +12,10 @@
 
 **10% of the final grade**
 
-This is a preliminary milestone to let you set up goals for your final project and assess the feasibility of your ideas.
-Please, fill the following sections about your project.
-
-*(max. 2000 characters per section)*
 
 ### Dataset
 
-MIMIC-IV is a publicly available dataset containing de-identified electronic health record data from over 2 million ICU patients at Beth Israel Deaconess Medical Center from 2008 to 2019. It includes vital signs, lab results, medications, and clinical notes, and can be used for clinical research and machine learning.
+[MIMIC-IV](https://physionet.org/content/mimiciv/2.2/) is a publicly available dataset containing de-identified electronic health record data from over 2 million ICU patients at Beth Israel Deaconess Medical Center from 2008 to 2019. It includes vital signs, lab results, medications, and clinical notes, and can be used for clinical research and machine learning.
 
 Sepsis is a life-threatening condition caused by the body's response to an infection. It can cause widespread inflammation, organ failure, and septic shock. Early recognition and treatment are crucial for a positive outcome.
 
@@ -43,6 +39,12 @@ Based on our literature review, we have identified several components that we pl
 ### Exploratory Data Analysis
 
 The dataset contains 7889 admissions that contains an ICD code that is related to sepsis. This exploratory data analysis will focus on the patients themselves and will try to explain who they are.
+
+Top 15 ICD codes are illustrated in the pie chart below. we can see that `severe sepsis with septic shock` is the most frequent icd code in our dataset followed by other sepsis-relevant icd codes.
+
+<img src="resources/images/icd_pie.png" alt="outcome" width="80%" height="80%" title = "outcome">
+
+
 The age repartition of this cohort is this:
 
 <img src="resources/images/age.png" alt="age" width="80%" height="80%" title = "age">
