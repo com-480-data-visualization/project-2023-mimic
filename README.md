@@ -2,7 +2,7 @@
 
 | Student's name | SCIPER |
 | -------------- | ------ |
-| | |
+| Jeremy Dezalos | 283885 |
 | | |
 | | |
 
