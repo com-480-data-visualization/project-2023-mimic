@@ -117,6 +117,22 @@ The originality of our project lies in the fact that we want to make the explora
 **10% of the final grade**
 
 
+### Visualization
+
+The website will be divided in panels. Each panel will cover the entirety of the screen and the user will be able to change panels by scrolling. The scrolling will always go to the next panel and not stop between panels.
+
+There will be four panels in our core visualization:
+
+- An introduction panel that will explain the goal of the visualization and the dataset used.
+- A panel that will contain time series of a few manually selected patients. The time series will how much time a patient stayed in a ward. The purpose of this panel is to gently introduce the users to the data by showing patients with interesting data while not overloading them with information. When clicking on a ward displayed in the time series, a new panel is created below and the screen will scroll automatically to it.
+- This new panel will contain events that happened when the patient was in the ward that was clicked.
+- The last panel will implement EventFlow, which was described in milestone 1. It will contain dropdown menus that will contain drugs, ICD codes or measures. Below the EventFlow visualization will be displayed and will only show the patients that match all the fields selected in the forementioned dropdown menus.
+When clicking on an event of the visualization, the same event of patients will be centered and aligned on the time series.
+
+### Tools
+
+### Goal breakdown
+
 ## Milestone 3 (4th June, 5pm)
 
 **80% of the final grade**
