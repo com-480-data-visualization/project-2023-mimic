@@ -124,10 +124,11 @@ The website will be divided in panels. Each panel will cover the entirety of the
 There will be four panels in our core visualization:
 
 - An introduction panel that will explain the goal of the visualization and the dataset used.
-- A panel that will contain time series of a few manually selected patients. The time series will how much time a patient stayed in a ward. The purpose of this panel is to gently introduce the users to the data by showing patients with interesting data while not overloading them with information. When clicking on a ward displayed in the time series, a new panel is created below and the screen will scroll automatically to it.
-- This new panel will contain events that happened when the patient was in the ward that was clicked.
-- The last panel will implement EventFlow, which was described in milestone 1. It will contain dropdown menus that will contain drugs, ICD codes or measures. Below the EventFlow visualization will be displayed and will only show the patients that match all the fields selected in the forementioned dropdown menus.
-When clicking on an event of the visualization, the same event of patients will be centered and aligned on the time series.
+- A panel that will contain time series of a few manually selected patients. The time series will display how much time a patient stayed in a ward as an horizontal stacked bar. The purpose of this panel is to gently introduce the users to the data by showing patients with interesting data while not overloading them with information. When clicking on a ward displayed in the time series, a new panel is created below and the screen will scroll automatically to it.
+- This new panel will contain events that happened when the patient was in the ward that was clicked by the user in the previous panel. The data will be shown as a time serie where each event is displayed at the time it has been recorded. The information presented will be dense as many events are recorded and not many conclusions can be made from it. This will make the user understand that the data is complicated and must be presented in a comprehensive fashion. From that observation, we invite the user to go to the next panel.
+- [EventFlow panel description goes here]
+
+<img src="resources/images/sketch.jpg" alt="sketch" width="80%" height="80%" title = "Sketch of our visualization">
 
 ### Tools
 
