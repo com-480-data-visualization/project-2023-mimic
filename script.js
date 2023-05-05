@@ -96,7 +96,7 @@ async function createDiv(){
 async function destroy(elem){
 	canCreatePanel = true;
 	//set the destination to top
-	scdir = 'top';
+	scdir = 'up';
 	_scrollY(well);
 	let d = document.getElementById(elem);
 	const node = document.createTextNode("Go down");
