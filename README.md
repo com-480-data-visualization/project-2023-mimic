@@ -128,7 +128,10 @@ There will be four panels in our core visualization:
 - This new panel will contain events that happened when the patient was in the ward that was clicked by the user in the previous panel. The data will be shown as a time serie where each event is displayed at the time it has been recorded. The information presented will be dense as many events are recorded and not many conclusions can be made from it. This will make the user understand that the data is complicated and must be presented in a comprehensive fashion. From that observation, we invite the user to go to the next panel.
 - [EventFlow panel description goes here]
 
+Here is the sketch of our visualization:
 <img src="resources/images/sketch.jpg" alt="sketch" width="80%" height="80%" title = "Sketch of our visualization">
+
+The (incomplete) visualization can be found [here](https://github.com/JeremyDezalos/data-viz-project/blob/main/website/page.html)
 
 ### Tools
 
