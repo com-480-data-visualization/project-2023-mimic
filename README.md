@@ -135,7 +135,17 @@ The (incomplete) visualization can be found [here](https://com-480-data-visualiz
 
 ### Tools
 
-Lectures 4,5,6...
+As recommended in the course, the project will be written in javascript using the D3 library to manage data and show visualizations. We host our webpage on the free service offered by github.
+
+To complete the project, we will mostly need to use those lectures from the course:
+
+- Lecture 4 & 5: We will be using D3, display interactive data and do some data filtering to choose what we will be presenting according to user's inputs.
+- Lecture 6: Our dataset contains lots of various data and we will need to display them with carefully choosen colors and patterns. The goal would be to make them as understandable as possible for a non-expert user. 
+- Lecture 11: The mimic dataset is only comprised of tabular data. We will display them using stacked bar, Sankey diagram, time alignment.
+
+Stacked bar: https://d3-graph-gallery.com/graph/barplot_horizontal.html (used as a skeleton to write the stacked bar)
+Sankey diagram: https://d3-graph-gallery.com/sankey.html
+Time series: https://d3-graph-gallery.com/line.html
 
 ### Goal breakdown
 
