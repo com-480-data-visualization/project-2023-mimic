@@ -119,6 +119,11 @@ The originality of our project lies in the fact that we want to make the explora
 
 ### Visualization
 
+Here is the sketch of our visualization:
+<img src="resources/images/sketch.jpg" alt="sketch" width="80%" height="80%" title = "Sketch of our visualization">
+
+The skeleton of our visualization can be found [here](https://com-480-data-visualization.github.io/project-2023-mimic/)
+
 The website will be divided in panels. Each panel will cover the entirety of the screen and the user will be able to change panels by scrolling. The scrolling will always go to the next panel and not stop between panels. When using a trackpad, the system is a bit sensitive for now.
 
 There will be four panels in our core visualization:
@@ -156,10 +161,6 @@ We also considered the following additional ideas:
 
 - t-SNE plot: We will provide a simple t-SNE diagram for the selected variables (in the first step) based on sequence so that the user can easily select a subgroup by brushing and selecting over it.
 
-Here is the sketch of our visualization:
-<img src="resources/images/sketch.jpg" alt="sketch" width="80%" height="80%" title = "Sketch of our visualization">
-
-The skeleton of our visualization can be found [here](https://com-480-data-visualization.github.io/project-2023-mimic/)
 
 ### Tools
 
