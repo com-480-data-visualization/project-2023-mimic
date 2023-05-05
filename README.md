@@ -119,7 +119,7 @@ The originality of our project lies in the fact that we want to make the explora
 
 ### Visualization
 
-The website will be divided in panels. Each panel will cover the entirety of the screen and the user will be able to change panels by scrolling. The scrolling will always go to the next panel and not stop between panels.
+The website will be divided in panels. Each panel will cover the entirety of the screen and the user will be able to change panels by scrolling. The scrolling will always go to the next panel and not stop between panels. When using a trackpad, the system is a bit sensitive for now.
 
 There will be four panels in our core visualization:
 
@@ -134,6 +134,8 @@ Here is the sketch of our visualization:
 The (incomplete) visualization can be found [here](https://com-480-data-visualization.github.io/project-2023-mimic/)
 
 ### Tools
+
+Lectures 4,5,6...
 
 ### Goal breakdown
 
