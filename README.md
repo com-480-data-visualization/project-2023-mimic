@@ -131,7 +131,7 @@ There will be four panels in our core visualization:
 Here is the sketch of our visualization:
 <img src="resources/images/sketch.jpg" alt="sketch" width="80%" height="80%" title = "Sketch of our visualization">
 
-The (incomplete) visualization can be found [here](https://github.com/JeremyDezalos/data-viz-project/blob/main/website/page.html)
+The (incomplete) visualization can be found [here](https://com-480-data-visualization.github.io/project-2023-mimic/)
 
 ### Tools
 
