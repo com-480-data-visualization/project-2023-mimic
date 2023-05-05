@@ -49,3 +49,10 @@ body {
 .panel:nth-child(5) {
 	background: #456789;
 }
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+}

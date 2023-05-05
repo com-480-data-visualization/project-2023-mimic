@@ -140,6 +140,8 @@ async function createDiv(){
 	divToCreate.innerHTML = "Lots of data for the patient !!!";
 	let func = "destroy('panelToDelete')"
 	divToCreate.innerHTML += '<br/><button onclick='+ func +'>Go back</button>';
+	
+	divToCreate.innerHTML += '<br/><img src="images/Panel3.png" class="center" alt="Example">';
 	divReference.parentNode.appendChild(divToCreate);
 	
 	//scroll down
