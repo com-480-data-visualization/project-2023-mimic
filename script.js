@@ -1,7 +1,7 @@
 //the basis of this script was found here: https://codepen.io/nearee/pen/zYYENMa
 
 
-d3.csv('http://localhost:8000/resources/data1/core/transfers.csv', createChart);
+/*d3.csv('http://localhost:8000/resources/data1/core/transfers.csv', createChart);
 //var data = d3.csv.parseRows('localhost:8000/resources/data1/core/transfers.csv');
 //console.log(data)
 //createChart(data)
@@ -38,7 +38,7 @@ function createChart(data) {
 		if(acc.includes(d.careunit)){
 
 		}
-	}
+	}*/
 	//var test = (parseTime(filtered_data[0].outtime) - parseTime(filtered_data[0].intime)) / 1000 //Donne la valeur en seconde
 
 	/*var grouped_by_careunit = d3.flatRollup(
@@ -59,7 +59,7 @@ function createChart(data) {
 	console.log(filtered_data)
 	/*console.log(parseTime(filtered_data[0].outtime))
 	console.log(parseTime(filtered_data[0].intime))*/
-}
+//}
 
 "use strict";
 /*[pan and well CSS scrolls]*/
