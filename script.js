@@ -56,7 +56,7 @@ function createChart(data) {
 
 	});*/
 
-	console.log(filtered_data)
+	//console.log(filtered_data)
 	/*console.log(parseTime(filtered_data[0].outtime))
 	console.log(parseTime(filtered_data[0].intime))*/
 //}
@@ -155,7 +155,7 @@ async function createDiv(){
 async function destroy(elem){
 	canCreatePanel = true;
 	//set the destination to top
-	scdir = 'top';
+	scdir = 'up';
 	_scrollY(well);
 	let d = document.getElementById(elem);
 	const node = document.createTextNode("Go down");
