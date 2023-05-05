@@ -119,18 +119,51 @@ The originality of our project lies in the fact that we want to make the explora
 
 ### Visualization
 
-The website will be divided in panels. Each panel will cover the entirety of the screen and the user will be able to change panels by scrolling. The scrolling will always go to the next panel and not stop between panels.
+The website will be divided in panels. Each panel will cover the entirety of the screen and the user will be able to change panels by scrolling. The scrolling will always go to the next panel and not stop between panels. When using a trackpad, the system is a bit sensitive for now.
 
 There will be four panels in our core visualization:
 
 - An introduction panel that will explain the goal of the visualization and the dataset used.
-- A panel that will contain time series of a few manually selected patients. The time series will display how much time a patient stayed in a ward as an horizontal stacked bar. The purpose of this panel is to gently introduce the users to the data by showing patients with interesting data while not overloading them with information. When clicking on a ward displayed in the time series, a new panel is created below and the screen will scroll automatically to it.
+- A panel that will contain time series of a few manually selected patients. The time series will display how much time a patient stayed in a ward as an horizontal stacked bar. When mouse-hovered, the bar corresponding to the ward will expand and show basic information (the name, how much time the patient has spent in it, ...). The purpose of this panel is to gently introduce the users to the data by showing patients with interesting data while not overloading them with information. When clicking on a ward displayed in the time series, a new panel is created below and the screen will scroll automatically to it.
 - This new panel will contain events that happened when the patient was in the ward that was clicked by the user in the previous panel. The data will be shown as a time serie where each event is displayed at the time it has been recorded. The information presented will be dense as many events are recorded and not many conclusions can be made from it. This will make the user understand that the data is complicated and must be presented in a comprehensive fashion. From that observation, we invite the user to go to the next panel.
-- [EventFlow panel description goes here]
+- In this panel, our aim is to create an interactive visualization for electronic health records. The user can select variables of interest from a dropdown menu based on their knowledge and also select a subgroup based on static features.
 
+<img src="resources/images/control_panel.jpg" alt="control_panel" width="100%" height="100%" title = "control_panel" >
+
+The next step will display selected variables for the patients. The selected variables fall into two categories:
+
+- Event sequence data where each event is represented as $(t_i,e_i)$ for timestamp and the event time, respectively.
+
+- Time-series variables where each data point is represented as $(t_i,m_i,v_i)$ for time, modality, and the corresponding value, respectively. Here, we convert the time series to events based on normal ranges. For example, HR>120 is regarded as `HR-High`.
+
+We show a raw visualization for the selected variables, where for each data point $(i,t_i,e_i)$, we use the x-axis for time, the y-axis for patient order, and the color/shape channel for the event type.
+
+We will use a triangle to represent each event, with the x and y axis representing channels. Examples are the sequence of medications, hospital wards, and ICD codes.
+
+Finally, when the user clicks on the `Simplify` button, we want to show a simplified version of the modalities illustrated in the previous step using the following techniques:
+
+- Time alignment: We will explore various methods for time alignment such as Dynamic Time Warping (DTW), Edit Distance, LSTMs, and more.
+
+- Modality alignment: Based on the alignment of time stamps and the similarity of sequences, we will reorder the modalities on the y-axis.
+
+- Sankey diagram: We will use a visualization tool similar to a Sankey diagram to simplify similar sequences.
+
+<img src="resources/images/alignment.png" alt="Time aggregation" width="100%" height="100%" title = "Time aggregation" >
+
+We also considered the following additional ideas:
+
+- Brush and Zoom: The user can zoom over both the x and y-axis to see more details for the selected area.
+
+- t-SNE plot: We will provide a simple t-SNE diagram for the selected variables (in the first step) based on sequence so that the user can easily select a subgroup by brushing and selecting over it.
+
+Here is the sketch of our visualization:
 <img src="resources/images/sketch.jpg" alt="sketch" width="80%" height="80%" title = "Sketch of our visualization">
 
+The skeleton of our visualization can be found [here](https://com-480-data-visualization.github.io/project-2023-mimic/)
+
 ### Tools
+
+Lectures 4,5,6...
 
 ### Goal breakdown
 
