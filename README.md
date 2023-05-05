@@ -166,6 +166,7 @@ To complete the project, we will mostly need to use those lectures from the cour
 - Lecture 4 & 5: We will be using D3, display interactive data and do some data filtering to choose what we will be presenting according to user's inputs.
 - Lecture 6: Our dataset contains lots of various data and we will need to display them with carefully choosen colors and patterns. The goal would be to make them as understandable as possible for a non-expert user.
 - Lecture 11: The mimic dataset is only comprised of tabular data. We will display them using stacked bar, Sankey diagram, time alignment.
+- We also need interaction, zooming and brushing compenents.
 
 Stacked bar: https://d3-graph-gallery.com/graph/barplot_horizontal.html (used as a skeleton to write the stacked bar)
 Sankey diagram: https://d3-graph-gallery.com/sankey.html
@@ -195,7 +196,7 @@ The t-SNE plot is a scatter plot that visualizes high-dimensional patient repres
 - It displays positive and negative labels, as well as model predictions with varying degrees of uncertainty.
 - The scatter plot is zoomable and should respond to the `mouseover` event, which will display `Panel II` for the selected patient.
 
-## Panel II
+### Panel II
 
 In the figure below, a single patient's data is illustrated using a heatmap. We aim to enhance its informativeness for the user by introducing additional features.
 
@@ -209,7 +210,7 @@ Here is a list of our expected features:
 
 <img src="resources/images/panel2-features2.png" alt="sketch" width="80%" height="80%" title = "Sketch of our visualization">
 
-### Tools
+### **Tools**
 
 As recommended in the course, the project will be written in javascript using the D3 library to manage data and show visualizations. We host our webpage on the free service offered by github.
 
@@ -218,10 +219,6 @@ To complete the project, we will mostly need to use those lectures from the cour
 - Lecture 4 & 5: We will be using D3, display interactive data and do some data filtering to choose what we will be presenting according to user's inputs.
 - Lecture 6: Our dataset contains lots of various data and we will need to display them with carefully choosen colors and patterns. The goal would be to make them as understandable as possible for a non-expert user.
 - Lecture 11: The mimic dataset is only comprised of tabular data. We will display them using stacked bar, Sankey diagram, time alignment.
-
-Stacked bar: https://d3-graph-gallery.com/graph/barplot_horizontal.html (used as a skeleton to write the stacked bar)
-Sankey diagram: https://d3-graph-gallery.com/sankey.html
-Time series: https://d3-graph-gallery.com/line.html
 
 ## Milestone 3 (4th June, 5pm)
 
