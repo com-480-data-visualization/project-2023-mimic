@@ -182,7 +182,11 @@ To analyze this dataset, we will use a pre-trained deep neural network model and
 
 ### **Visualization**
 
-Our final visualization will consist of two panels:
+The skeleton of our visualization can be found [here](https://com-480-data-visualization.github.io/project-2023-mimic/)
+
+The website will be divided in panels. Each panel will cover the entirety of the screen and the user will be able to change panels by scrolling. The scrolling will always go to the next panel and not stop between panels. When using a trackpad, the system is a bit sensitive for now.
+
+Our final visualization core will consist of two panels:
 
 - Panel I: a t-SNE plot that visualizes the learned representation of all patients.
 - Panel II: a single-patient view that visualizes all measurements taken throughout their entire ICU stay.
@@ -209,6 +213,38 @@ Here is a list of our expected features:
 - **Attention weights**: When the user requests to see the attention weights, appropriate channels are used to display the data.
 
 <img src="resources/images/panel2-features2.png" alt="sketch" width="80%" height="80%" title = "Sketch of our visualization">
+
+### Panel III (Extension)
+
+- In this panel, our aim is to create an interactive visualization for electronic health records. The user can select variables of interest from a dropdown menu based on their knowledge and also select a subgroup based on static features.
+
+<img src="resources/images/control_panel.jpg" alt="control_panel" width="100%" height="100%" title = "control_panel" >
+
+The next step will display selected variables for the patients. The selected variables fall into two categories:
+
+- Event sequence data where each event is represented as $(t_i,e_i)$ for timestamp and the event time, respectively.
+
+- Time-series variables where each data point is represented as $(t_i,m_i,v_i)$ for time, modality, and the corresponding value, respectively. Here, we convert the time series to events based on normal ranges. For example, HR>120 is regarded as `HR-High`.
+
+We show a raw visualization for the selected variables, where for each data point $(i,t_i,e_i)$, we use the x-axis for time, the y-axis for patient order, and the color/shape channel for the event type.
+
+We will use a triangle to represent each event, with the x and y axis representing channels. Examples are the sequence of medications, hospital wards, and ICD codes.
+
+Finally, when the user clicks on the `Simplify` button, we want to show a simplified version of the modalities illustrated in the previous step using the following techniques:
+
+- Time alignment: We will explore various methods for time alignment such as Dynamic Time Warping (DTW), Edit Distance, LSTMs, and more.
+
+- Modality alignment: Based on the alignment of time stamps and the similarity of sequences, we will reorder the modalities on the y-axis.
+
+- Sankey diagram: We will use a visualization tool similar to a Sankey diagram to simplify similar sequences.
+
+<img src="resources/images/alignment.png" alt="Time aggregation" width="100%" height="100%" title = "Time aggregation" >
+
+We also considered the following additional ideas:
+
+- Brush and Zoom: The user can zoom over both the x and y-axis to see more details for the selected area.
+
+- t-SNE plot: We will provide a simple t-SNE diagram for the selected variables (in the first step) based on sequence so that the user can easily select a subgroup by brushing and selecting over it.
 
 ### **Tools**
 
