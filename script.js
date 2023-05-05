@@ -126,7 +126,7 @@ var svg = d3.select("#divCreator")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv('https://github.com/com-480-data-visualization/project-2023-mimic/blob/website/transfers.csv', createChart);
+d3.csv('./transfers.csv', createChart);
 
 function createChart(data) {
 
