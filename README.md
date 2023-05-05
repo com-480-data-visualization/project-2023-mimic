@@ -3,15 +3,14 @@
 | Student's name | SCIPER |
 | -------------- | ------ |
 | Jeremy Dezalos | 283885 |
-| Hojjat Karami | 332629|
-| Léonard Vaney | 284023 |
+| Hojjat Karami  | 332629 |
+| Léonard Vaney  | 284023 |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
 ## Milestone 1 (23rd April, 5pm)
 
 **10% of the final grade**
-
 
 ### Dataset
 
@@ -29,12 +28,12 @@ We are interested in acquainting students with patient data in electronic health
 
 Based on our literature review, we have identified several components that we plan to develop in our project. These components include:
 
-* A global overview of the entire dataset.
-* Interactive subset selection, allowing the user to select a subset of the data by interacting with the overview panel.
-* The ability for the user to specify desired outcomes, such as length of stay, specific diseases (using ICD codes), or in-hospital mortality.
-* A simple clustering algorithm (e.g. K-means) to show potential patient subgroups. The user should be able to select two subgroups for further analysis.
-* A panel utilizing recent "event sequence simplification" algorithms to show differences in medication order for each subgroup.
-* A panel to show aggregated trends and temporal patterns in clinical variables, such as laboratory and vital values, for each subgroup.
+- A global overview of the entire dataset.
+- Interactive subset selection, allowing the user to select a subset of the data by interacting with the overview panel.
+- The ability for the user to specify desired outcomes, such as length of stay, specific diseases (using ICD codes), or in-hospital mortality.
+- A simple clustering algorithm (e.g. K-means) to show potential patient subgroups. The user should be able to select two subgroups for further analysis.
+- A panel utilizing recent "event sequence simplification" algorithms to show differences in medication order for each subgroup.
+- A panel to show aggregated trends and temporal patterns in clinical variables, such as laboratory and vital values, for each subgroup.
 
 ### Exploratory Data Analysis
 
@@ -43,7 +42,6 @@ The dataset contains 7889 admissions that contains an ICD code that is related t
 Top 15 ICD codes are illustrated in the pie chart below. we can see that `severe sepsis with septic shock` is the most frequent icd code in our dataset followed by other sepsis-relevant icd codes.
 
 <img src="resources/images/icd_pie.png" alt="outcome" width="80%" height="80%" title = "outcome">
-
 
 The age repartition of this cohort is this:
 
@@ -107,15 +105,13 @@ Tool for comparing groups (cohorts) of temporal event sequence data.
 <img src="resources/images/dicon.jpg" alt="DICON" width="80%" height="80%" title = "DICON">
 
 [DICON](https://gotz.web.unc.edu/research-project/dicon/)
-Visualization tool to explore similarity in cohorts of patients. 
+Visualization tool to explore similarity in cohorts of patients.
 
 The originality of our project lies in the fact that we want to make the exploration of this dataset understandable and usable by students or inexperienced users with EHR data and to give them useful insights on this dataset.
-
 
 ## Milestone 2 (7th May, 5pm)
 
 **10% of the final grade**
-
 
 ### Visualization
 
@@ -161,7 +157,6 @@ We also considered the following additional ideas:
 
 - t-SNE plot: We will provide a simple t-SNE diagram for the selected variables (in the first step) based on sequence so that the user can easily select a subgroup by brushing and selecting over it.
 
-
 ### Tools
 
 As recommended in the course, the project will be written in javascript using the D3 library to manage data and show visualizations. We host our webpage on the free service offered by github.
@@ -169,7 +164,7 @@ As recommended in the course, the project will be written in javascript using th
 To complete the project, we will mostly need to use those lectures from the course:
 
 - Lecture 4 & 5: We will be using D3, display interactive data and do some data filtering to choose what we will be presenting according to user's inputs.
-- Lecture 6: Our dataset contains lots of various data and we will need to display them with carefully choosen colors and patterns. The goal would be to make them as understandable as possible for a non-expert user. 
+- Lecture 6: Our dataset contains lots of various data and we will need to display them with carefully choosen colors and patterns. The goal would be to make them as understandable as possible for a non-expert user.
 - Lecture 11: The mimic dataset is only comprised of tabular data. We will display them using stacked bar, Sankey diagram, time alignment.
 
 Stacked bar: https://d3-graph-gallery.com/graph/barplot_horizontal.html (used as a skeleton to write the stacked bar)
@@ -178,10 +173,59 @@ Time series: https://d3-graph-gallery.com/line.html
 
 ### Goal breakdown
 
+## Milestone 2 [second version] (7th May, 5pm)
+
+We will be using a pre-processed subset of the MIMIC dataset, which includes clinical data for 12,000 ICU patients. The dataset provides 36 irregularly-sampled sensor observations and 6 static demographic features for each patient, along with an in-hospital mortality label. However, the subset is highly imbalanced, with only 7% negative samples, and has a missing ratio of 88.4%.
+
+To analyze this dataset, we will use a pre-trained deep neural network model and assess its predictive output. The model is attention-based, and its weights can be interpreted as feature importance.
+
+### **Visualization**
+
+Our final visualization will consist of two panels:
+
+- Panel I: a t-SNE plot that visualizes the learned representation of all patients.
+- Panel II: a single-patient view that visualizes all measurements taken throughout their entire ICU stay.
+
+Next, We explain each panel in detail regarding its expected features and behavior.
+
+### Panel I
+
+The t-SNE plot is a scatter plot that visualizes high-dimensional patient representations in 2D coordinates. The following features are expected:
+
+- It displays positive and negative labels, as well as model predictions with varying degrees of uncertainty.
+- The scatter plot is zoomable and should respond to the `mouseover` event, which will display `Panel II` for the selected patient.
+
+## Panel II
+
+In the figure below, a single patient's data is illustrated using a heatmap. We aim to enhance its informativeness for the user by introducing additional features.
+
+<img src="resources/images/example.png" alt="sketch" width="40%" height="40%" title = "Sketch of our visualization">
+
+Here is a list of our expected features:
+
+- **Brush and zoom**: This feature allows the user to zoom in on the time axis by brushing.
+- **Variable re-ordering**: When the user hovers over a specific timestamp, the variables (on the y-axis) are realigned based on their deviation from the normal range. For instance, at the top, we should see very high values, and at the bottom, we should see very low values. It is crucial to add some degree of tolerance to make the feature less sensitive to small changes when hovering over the entire timeline.
+- **Attention weights**: When the user requests to see the attention weights, appropriate channels are used to display the data.
+
+<img src="resources/images/panel2-features2.png" alt="sketch" width="80%" height="80%" title = "Sketch of our visualization">
+
+### Tools
+
+As recommended in the course, the project will be written in javascript using the D3 library to manage data and show visualizations. We host our webpage on the free service offered by github.
+
+To complete the project, we will mostly need to use those lectures from the course:
+
+- Lecture 4 & 5: We will be using D3, display interactive data and do some data filtering to choose what we will be presenting according to user's inputs.
+- Lecture 6: Our dataset contains lots of various data and we will need to display them with carefully choosen colors and patterns. The goal would be to make them as understandable as possible for a non-expert user.
+- Lecture 11: The mimic dataset is only comprised of tabular data. We will display them using stacked bar, Sankey diagram, time alignment.
+
+Stacked bar: https://d3-graph-gallery.com/graph/barplot_horizontal.html (used as a skeleton to write the stacked bar)
+Sankey diagram: https://d3-graph-gallery.com/sankey.html
+Time series: https://d3-graph-gallery.com/line.html
+
 ## Milestone 3 (4th June, 5pm)
 
 **80% of the final grade**
-
 
 ## Late policy
 
