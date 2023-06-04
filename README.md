@@ -205,7 +205,7 @@ Most of our work throughout the semester can be found on this personal repositor
 
 ### Screencast
 
-[Link](https://github.com/com-480-data-visualization/project-2023-mimic/blob/master/resources/dataviz_moive.mp4) to the screencast.
+[Link](https://github.com/com-480-data-visualization/project-2023-mimic/blob/master/resources/dataviz_movie.mp4) to the screencast.
 
 ### Process book
 
