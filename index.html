@@ -1,25 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta charset="UTF-8">
-	<title>My Nice Website</title>
-	<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	<script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>
-	<link rel="stylesheet" href="./style.css">
-  </head>
-  <body>
-	<div class="well" id="well">
-	    <div class="panel">Description of project/dataset</div>
-		<div>
-			<div class="panel" id="divCreator">Here's an example for one patient <span class="top">&uarr;</span>
-				<br/>
-			</div>
-		</div>
-	    	<div class="panel">EventFlow Visualization<span class="top">&uarr;</span>
-			<img src="images/Panel4.png" class="center" alt="Example">
-		</div>
-	</div>
-  </body>
-  <script src="script.js"></script>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
+    <title>EHR-Vis</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: MyResume
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body>
+    <!-- ======= Mobile nav toggle button ======= -->
+    <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+    <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex flex-column justify-content-center">
+      <nav id="navbar" class="navbar nav-menu">
+        <ul>
+          <li>
+            <a href="#hero" class="nav-link scrollto active"
+              ><i class="bx bx-home"></i> <span>Intro</span></a
+            >
+          </li>
+          <li>
+            <a href="#tsne" class="nav-link scrollto"
+              ><i class="bx bx-user"></i> <span>t-SNE</span></a
+            >
+          </li>
+
+          <li>
+            <a href="#plots" class="nav-link scrollto"
+              ><i class="bx bx-user"></i> <span>plots</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-- .nav-menu -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex flex-column justify-content-center">
+      <div class="container" data-aos="zoom-in" data-aos-delay="100">
+        <h1>EHR-Vis</h1>
+        <br />
+        <br />
+        <h2 style="text-align: justify">
+          <b>Electronic Health Records (EHR)</b> are digital versions of a
+          patient's medical history. Time series data within EHRs captures
+          patient health measurements over time, aiding in monitoring, treatment
+          evaluation, and prediction. <b>Irregularly sampled time series</b> in
+          EHRs, with varying time intervals, can be challenging to analyze.
+          Visualization plays a crucial role in understanding patterns and
+          identifying gaps or anomalies in the data. Visual representations such
+          as line graphs or scatter plots help healthcare professionals
+          interpret the time series effectively. EHRs, along with visualization
+          of time series data, enhance care coordination, decision-making, and
+          personalized patient care.
+        </h2>
+        <!-- <p>
+          I'm
+          <span
+            class="typed"
+            data-typed-items="Designer, Developer, Freelancer, Photographer"
+          ></span>
+        </p> -->
+        <!-- <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div> -->
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+      <!-- ======= About Section ======= -->
+      <section id="tsne" class="about">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>t-SNE Visualization</h2>
+            <p>
+              t-SNE (t-Distributed Stochastic Neighbor Embedding) is a machine
+              learning technique used for visualizing high-dimensional data by
+              mapping it into a lower-dimensional space while preserving local
+              relationships.
+            </p>
+            <h3>Click on a patient to visulalize!</h3>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-2">
+              <h4>Legend</h4>
+              <div
+                id="scatterplot_tsne_legend_div"
+                style="display: flex; justify-content: center"
+              ></div>
+            </div>
+
+            <div class="col-lg-6">
+              <!-- <img src="assets/img/profile-img.jpg" class="img-fluid" alt="" /> -->
+              <div
+                id="scatterplot_tsne_div"
+                style="display: flex; justify-content: center"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End About Section -->
+      <br/><br/><br/>
+      <!-- ======= Facts Section ======= -->
+      <section id="plots" class="facts">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2 id="Scatter_panel">Single patient view</h2>
+            <h3>Measurements of the patient</h3>
+
+            <!-- ************************************** Scatter for states -->
+
+            <div class="row">
+              <div class="col-lg-2">
+                <!-- slider for scatter_state -->
+                <h4>Control Box</h4>
+                <br />
+                <input
+                  type="range"
+                  name="slider_scatter_state"
+                  id="slider_scatter_state"
+                  min="0.0"
+                  max="3"
+                  value="0"
+                  step="0.1"
+                />
+                <p id="slider_state_text">
+                  <!-- abs(value-mean)>0 S.D -->
+                  `|value|> 0 \sigma `
+                </p>
+
+                <br />
+                <hr />
+                <h4>Legend</h4>
+                <h5>Standardized Value</h5>
+
+                <div
+                  id="scatterplot_states_legend_div"
+                  style="display: flex; justify-content: center"
+                ></div>
+                <br />
+                <h5>Attention Weights</h5>
+                <div
+                  id="scatterplot_att_legend_div"
+                  style="display: flex; justify-content: center"
+                ></div>
+              </div>
+
+              <div class="col-lg-10">
+                <div
+                  id="scatterplot_states_div"
+                  style="display: flex; justify-content: center"
+                ></div>
+              </div>
+            </div>
+            <br/>
+            <h3>Variations from the norm</h3>
+
+            <!-- ************************************** Stacked Area Chart -->
+
+            <div class="row">
+              <div class="col-lg-2">
+                <h4>Control Box</h4>
+                <br />
+                <!-- slider -->
+                <input
+                  type="range"
+                  name="slider_stackedAreaChart"
+                  id="slider_stackedAreaChart"
+                  min="0.0"
+                  max="3.0"
+                  value="1"
+                  step="0.5"
+                />
+                <p id="slider_area_text">
+                  <!-- abnormality(value) = abs(value)- 1 S.D -->
+
+                  `\text{abnormality(value)}= |value|- 1 \sigma `
+                </p>
+
+                <!-- <br />
+                <hr />
+                <h4>Legend</h4>
+                <div
+                  id="stackedarea_legend_div"
+                  style="display: flex; justify-content: center"
+                ></div> -->
+              </div>
+
+              <div class="col-lg-10">
+                <div
+                  id="stackedchart"
+                  style="display: flex; justify-content: center"
+                ></div>
+              </div>
+            </div>
+
+            <!-- <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="count-box">
+                <i class="bi bi-emoji-smile"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="232"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Happy Clients</p>
+              </div>
+            </div> -->
+
+            <!-- <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+              <div class="count-box">
+                <i class="bi bi-journal-richtext"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="521"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Projects</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+              <div class="count-box">
+                <i class="bi bi-headset"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="1463"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+              <div class="count-box">
+                <i class="bi bi-award"></i>
+                <span
+                  data-purecounter-start="0"
+                  data-purecounter-end="25"
+                  data-purecounter-duration="1"
+                  class="purecounter"
+                ></span>
+                <p>Awards</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!-- End Facts Section -->
+
+      <!-- End Contact Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <h3>Designed @ EPFL</h3>
+        <p>project for the course COM-480 Data Visualization</p>
+
+        <h4>
+          Team members: <br />
+
+          Hojjat Karami, Léonard Vaney and Jeremy Dezalos
+        </h4>
+        <div class="social-links">
+          <br />
+          <h5>Source Code</h5>
+
+          <a
+            href="https://github.com/com-480-data-visualization/project-2023-mimic"
+            class="github"
+            ><i class="bx bxl-github"></i
+          ></a>
+        </div>
+        <!-- <div class="copyright">
+          &copy; Copyright <strong><span>MyResume</span></strong
+          >. All Rights Reserved
+        </div> -->
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: [license-url] -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- added scripts -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
