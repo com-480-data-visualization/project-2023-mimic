@@ -197,6 +197,8 @@ To complete the project, we will mostly need to use those lectures from the cour
 
 **80% of the final grade**
 
+Most of our work throughout the semester can be found on this personal repository: https://github.com/JeremyDezalos/data-viz-project
+
 ### Website
 
 [Link](https://com-480-data-visualization.github.io/project-2023-mimic/) to the website.
