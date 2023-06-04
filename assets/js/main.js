@@ -282,9 +282,9 @@
 
 // ADDED BY ME
 
-PATH = "https://github.com/com-480-data-visualization/project-2023-mimic/blob/master/resources/tsne_datavis.json";
-PATH2 = "https://github.com/com-480-data-visualization/project-2023-mimic/blob/master/resources/test.json";
-PATH_dict = "https://github.com/com-480-data-visualization/project-2023-mimic/blob/master/resources/dict_map_states.json";
+PATH = "./resources/tsne_datavis.json";
+PATH2 = "./resources/test.json";
+PATH_dict = "./resources/dict_map_states.json";
 var PAT_ID = 0; // patient id selected from tsne and to be displayed
 
 // loading dictioinary for mapping numbders to state name
