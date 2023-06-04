@@ -197,6 +197,18 @@ To complete the project, we will mostly need to use those lectures from the cour
 
 **80% of the final grade**
 
+### Website
+
+[Link](https://com-480-data-visualization.github.io/project-2023-mimic/) to the website.
+
+### Screencast
+
+[Link](TBD) to the screencast.
+
+### Process book
+
+[Link](TBD) to the process book.
+
 ## Late policy
 
 - < 24h: 80% of the grade for the milestone
