@@ -282,10 +282,10 @@
 
 // ADDED BY ME
 
-PATH = "../resources/sepsis1/core/transfers.csv";
-PATH = "../resources/tsne_datavis.json";
-PATH2 = "../resources/test.json";
-PATH_dict = "../resources/dict_map_states.json";
+PATH = "./resources/sepsis1/core/transfers.csv";
+PATH = "./resources/tsne_datavis.json";
+PATH2 = "./resources/test.json";
+PATH_dict = "./resources/dict_map_states.json";
 var PAT_ID = 0; // patient id selected from tsne and to be displayed
 
 // loading dictioinary for mapping numbders to state name
