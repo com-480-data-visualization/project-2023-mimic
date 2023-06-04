@@ -205,11 +205,11 @@ Most of our work throughout the semester can be found on this personal repositor
 
 ### Screencast
 
-[Link](TBD) to the screencast.
+[Link](https://github.com/com-480-data-visualization/project-2023-mimic/blob/master/resources/dataviz_moive.mp4) to the screencast.
 
 ### Process book
 
-[Link](TBD) to the process book.
+[Link](https://github.com/com-480-data-visualization/project-2023-mimic/blob/master/resources/Process_book.pdf) to the process book.
 
 ## Late policy
 
