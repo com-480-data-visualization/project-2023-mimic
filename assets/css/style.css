@@ -310,6 +310,11 @@ h6 {
   right: 0;
 }
 
+.col-lg-6 {
+  margin-left: 90px;
+  margin-right: auto;
+}
+
 #hero h1 {
   margin: 0;
   font-size: 64px;

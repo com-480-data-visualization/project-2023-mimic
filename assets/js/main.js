@@ -282,9 +282,10 @@
 
 // ADDED BY ME
 
-PATH = "./resources/tsne_datavis.json";
-PATH2 = "./resources/test.json";
-PATH_dict = "./resources/dict_map_states.json";
+PATH = "../resources/sepsis1/core/transfers.csv";
+PATH = "../resources/tsne_datavis.json";
+PATH2 = "../resources/test.json";
+PATH_dict = "../resources/dict_map_states.json";
 var PAT_ID = 0; // patient id selected from tsne and to be displayed
 
 // loading dictioinary for mapping numbders to state name
@@ -708,10 +709,8 @@ function render_scatter_tsne(
   var g_xAxis = scatterplot
     .append("g")
     .attr("class", "x-axis")
-    .attr("transform", "translate(" + "0," + height + ")")
-    .call(xAxis);
 
-  var g_yAxis = scatterplot.append("g").attr("class", "y-axis").call(yAxis);
+  //var g_yAxis = scatterplot.append("g").attr("class", "y-axis").call(yAxis);
 
   // add invisible tooltip area
   var divToolTip = d3
@@ -895,9 +894,9 @@ function render_scatter_tsne(
         var newY = event.transform.rescaleY(yScale);
         // update axis
         xAxis.scale(newX);
-        scatterplot.select(".x-axis").call(xAxis);
+        //scatterplot.select(".x-axis").call(xAxis);
         yAxis.scale(newY);
-        scatterplot.select(".y-axis").call(yAxis);
+        //scatterplot.select(".y-axis").call(yAxis);
       })
   );
 
